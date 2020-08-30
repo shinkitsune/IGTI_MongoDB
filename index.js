@@ -16,3 +16,9 @@ import mongoose from "mongoose";
     console.log("Erro ao conectar com o banco de dados: ", error);
   }
 })();
+
+const app = express();
+app.use(express.json());
+
+app.use(accountRouter);
+app.listen(3000, () => console.log("API iniciada com sucesso!"));
