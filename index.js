@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
-
-
+import { accountRouter } from "./routes/accountRouter.js";
+import { url } from "./url.js";
 
 (async () => {
   try {
