@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import { accountRouter } from "./routes/accountRouter.js";
 import { url } from "./url.js";
 
+require('dotenv').config();
 (async () => {
   try {
     await mongoose.connect(url, {
@@ -20,4 +21,4 @@ const app = express();
 app.use(express.json());
 
 app.use(accountRouter);
-app.listen(3000, () => console.log("API iniciada com sucesso!"));
+app.listen(process.env.PORT, () => console.log("API iniciada com sucesso!"));
